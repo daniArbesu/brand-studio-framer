@@ -122,7 +122,7 @@ const Header = (): JSX.Element => {
           </li>
         </NavBar>
         <Contact>
-          <a href="/contact">Let`&apos;`s work together</a>
+          <a href="/contact">Let&apos;s work together</a>
         </Contact>
         <HamburgerMenu>
           <span></span>
