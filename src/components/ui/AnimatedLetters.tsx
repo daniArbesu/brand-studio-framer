@@ -1,4 +1,5 @@
 import { styled } from 'styled-components';
+import { theme } from '../../styles/theme';
 
 interface Props {
   title: string;
@@ -11,7 +12,7 @@ const RowTitle = styled.span`
   letter-spacing: -0.8rem;
   display: inline-block;
   white-space: nowrap;
-  @media (max-width: $layout-breakpoint-xsmall) {
+  @media (max-width: ${theme.breakpoint.xs}) {
     font-size: 13rem;
   }
 `;
@@ -21,7 +22,7 @@ const RowLetter = styled(RowTitle)``;
 const AnimatedLetters = ({ title }: Props): JSX.Element => {
   return (
     <RowTitle>
-      {[...title].map(({ letter, index }) => (
+      {[...title].map((letter, index) => (
         <RowLetter key={index}>{letter}</RowLetter>
       ))}
     </RowTitle>
