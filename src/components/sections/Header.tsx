@@ -103,7 +103,7 @@ const Header = (): JSX.Element => {
   return (
     <HeaderSection>
       <HeaderInner>
-        <Logo>Ollie</Logo>
+        <Logo>Brandy</Logo>
         <NavBar>
           <li>
             <a href="/design">Design</a>
