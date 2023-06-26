@@ -4,6 +4,13 @@ export const theme = {
     white: '#fff',
     black: '#24242a'
   },
+  weight: {
+    regular: '400',
+    medium: '500',
+    semibold: '600',
+    bold: '700',
+    extrabold: '800'
+  },
   breakpoint: {
     xs: '480px',
     sm: '960px',
