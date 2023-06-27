@@ -14,11 +14,11 @@ const App = (): JSX.Element => {
         <>
           <Header />
           <Banner />
-          {/*           {!loading && (
+          {!loading && (
             <div className="transition-image final">
-              <img src={process.env.PUBLIC_URL + `/images/image-2.jpg`} />
+              <img src={'/images/image-2.webp'} />
             </div>
-          )} */}
+          )}
         </>
       )}
     </>

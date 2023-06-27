@@ -1,15 +1,12 @@
 interface Props {
   src: string;
-  fallback: string;
-  type: string;
-  alt: string;
+  type?: string;
 }
 
-const Image = ({ src, fallback, type = 'image/webp', alt }: Props): JSX.Element => {
+const Image = ({ src, type = 'image/webp' }: Props): JSX.Element => {
   return (
     <picture>
       <source srcSet={src} type={type} />
-      <img src={fallback} alt={alt} />
     </picture>
   );
 };
