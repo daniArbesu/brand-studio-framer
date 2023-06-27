@@ -69,3 +69,37 @@ export const BannerRow = styled.div`
     }
   }
 `;
+
+export const TransitionImage = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 800px;
+    display: flex;
+  }
+
+  &.final {
+    display: block;
+    top: -128px;
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+    z-index: -100;
+
+    @media (max-width: ${theme.breakpoint.xs}) {
+      top: -56px;
+    }
+
+    img {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+`;
