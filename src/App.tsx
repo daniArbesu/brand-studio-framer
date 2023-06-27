@@ -4,7 +4,7 @@ import Header from './components/sections/Header';
 import Loader from './components/sections/Loader';
 
 const App = (): JSX.Element => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   return (
     <>
