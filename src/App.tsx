@@ -1,10 +1,17 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Banner from './components/sections/Banner';
 import Header from './components/sections/Header';
 import Loader from './components/sections/Loader';
+import { TransitionImage } from './styles/components';
 
 const App = (): JSX.Element => {
   const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    loading
+      ? document.querySelector('body')?.classList.add('loading')
+      : document.querySelector('body')?.classList.remove('loading');
+  }, [loading]);
 
   return (
     <>
@@ -15,9 +22,9 @@ const App = (): JSX.Element => {
           <Header />
           <Banner />
           {!loading && (
-            <div className="transition-image final">
+            <TransitionImage className="final">
               <img src={'/images/image-2.webp'} />
-            </div>
+            </TransitionImage>
           )}
         </>
       )}
