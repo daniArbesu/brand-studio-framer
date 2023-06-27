@@ -16,5 +16,9 @@ export const theme = {
     sm: '960px',
     md: '1440px',
     lg: '1920px'
+  },
+  animation: {
+    bannerInitial: 'calc(-25%)',
+    bannerFinal: 'calc(-50%)'
   }
 };
