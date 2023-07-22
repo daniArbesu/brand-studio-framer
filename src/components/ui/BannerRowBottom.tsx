@@ -2,12 +2,13 @@ import { styled } from 'styled-components';
 import { BannerRow } from '../../styles/components';
 import AnimatedLetters from './AnimatedLetters';
 import { theme } from '../../styles/theme';
+import { motion } from 'framer-motion';
 
 interface Props {
   title: string;
 }
 
-const ScrollSign = styled.div`
+const ScrollSign = styled(motion.div)`
   height: 160px;
   width: 160px;
   border-radius: 100%;
@@ -38,9 +39,25 @@ const ScrollSign = styled.div`
 const BannerRowBottom = ({ title }: Props): JSX.Element => {
   return (
     <BannerRow className="center">
-      <ScrollSign>
-        <span>scroll</span>
-        <span>down</span>
+      <ScrollSign
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ ease: [0.6, 0.01, -0.05, 0.91], duration: 1, delay: 1 }}
+      >
+        <motion.span
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ ease: 'easeInOut', duration: 1, delay: 1.8 }}
+        >
+          scroll
+        </motion.span>
+        <motion.span
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ ease: 'easeInOut', duration: 1, delay: 1.8 }}
+        >
+          down
+        </motion.span>
       </ScrollSign>
       <AnimatedLetters title={title} />
     </BannerRow>

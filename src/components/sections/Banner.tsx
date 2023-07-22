@@ -13,7 +13,9 @@ const Banner = (): JSX.Element => {
   const [playMarquee, setPlayMarquee] = useState(false);
 
   useEffect(() => {
-    setPlayMarquee(true);
+    setTimeout(() => {
+      setPlayMarquee(true);
+    }, 2000);
   }, []);
 
   return (

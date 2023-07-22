@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 
 interface Props {
   title: string;
+  disabled?: boolean;
 }
 
 const RowTitle = styled(motion.span)`
@@ -30,9 +31,9 @@ const letterAnimation = {
 
 const RowLetter = styled(RowTitle)``;
 
-const AnimatedLetters = ({ title }: Props): JSX.Element => {
+const AnimatedLetters = ({ title, disabled = false }: Props): JSX.Element => {
   return (
-    <RowTitle variants={banner} initial="initial" animate="animate">
+    <RowTitle variants={disabled ? undefined : banner} initial="initial" animate="animate">
       {[...title].map((letter, index) => (
         <RowLetter variants={letterAnimation} key={index}>
           {letter}
