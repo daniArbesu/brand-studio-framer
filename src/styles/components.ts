@@ -1,5 +1,6 @@
 import { styled } from 'styled-components';
 import { theme } from './theme';
+import { motion } from 'framer-motion';
 
 export const BannerRow = styled.div`
   overflow: hidden;
@@ -70,7 +71,7 @@ export const BannerRow = styled.div`
   }
 `;
 
-export const TransitionImage = styled.div`
+export const TransitionImage = styled(motion.div)`
   position: absolute;
   top: 0;
   left: 0;

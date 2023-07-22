@@ -1,11 +1,12 @@
 import { styled } from 'styled-components';
 import { theme } from '../../styles/theme';
+import { motion } from 'framer-motion';
 
 interface Props {
   title: string;
 }
 
-const RowTitle = styled.span`
+const RowTitle = styled(motion.span)`
   font-size: 28rem;
   font-weight: 500;
   position: relative;
@@ -17,13 +18,25 @@ const RowTitle = styled.span`
   }
 `;
 
+// motion variants
+const banner = {
+  animate: { transition: { delayChildren: 0.4, staggerChildren: 0.1 } }
+};
+
+const letterAnimation = {
+  initial: { y: 400 },
+  animate: { y: 0, transition: { ease: [0.6, 0.01, -0.05, 0.91], duration: 1 } }
+};
+
 const RowLetter = styled(RowTitle)``;
 
 const AnimatedLetters = ({ title }: Props): JSX.Element => {
   return (
-    <RowTitle>
+    <RowTitle variants={banner} initial="initial" animate="animate">
       {[...title].map((letter, index) => (
-        <RowLetter key={index}>{letter}</RowLetter>
+        <RowLetter variants={letterAnimation} key={index}>
+          {letter}
+        </RowLetter>
       ))}
     </RowTitle>
   );
