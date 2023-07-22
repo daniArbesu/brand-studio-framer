@@ -1,7 +1,8 @@
 import { styled } from 'styled-components';
 import { theme } from '../../styles/theme';
+import { motion } from 'framer-motion';
 
-const HeaderSection = styled.header`
+const HeaderSection = styled(motion.header)`
   font-size: 1.8rem;
   height: 156px;
   display: flex;
@@ -43,13 +44,13 @@ const NavBar = styled.nav`
   left: 50%;
   transform: translateX(-50%);
 
-  @media (max-width: ${theme.breakpoint.md}) {
+  @media (max-width: ${theme.breakpoint.sm}) {
     display: none;
   }
 
   li {
     list-style: none;
-    margin: 0 40px;
+    margin: 0 20px;
     a {
       text-decoration: none;
       color: ${theme.color.black};
@@ -87,7 +88,7 @@ const HamburgerMenu = styled.div`
   &:hover {
     background: darken($color: ${theme.color.white}, $amount: 12);
   }
-  @media (min-width: ${theme.breakpoint.md}) {
+  @media (min-width: ${theme.breakpoint.sm}) {
     display: none;
   }
   span {
@@ -101,7 +102,11 @@ const HamburgerMenu = styled.div`
 
 const Header = (): JSX.Element => {
   return (
-    <HeaderSection>
+    <HeaderSection
+      initial={{ opacity: 0, y: -180 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ ease: 'easeInOut', duration: 1, delay: 0.6 }}
+    >
       <HeaderInner>
         <Logo>Brandy</Logo>
         <NavBar>
