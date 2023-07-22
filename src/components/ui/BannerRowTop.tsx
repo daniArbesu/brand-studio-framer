@@ -2,12 +2,13 @@ import { styled } from 'styled-components';
 import AnimatedLetters from './AnimatedLetters';
 import { theme } from '../../styles/theme';
 import { BannerRow } from '../../styles/components';
+import { motion } from 'framer-motion';
 
 interface Props {
   title: string;
 }
 
-const RowCol = styled.div`
+const RowCol = styled(motion.div)`
   width: 50%;
   display: flex;
   align-content: center;
@@ -38,7 +39,11 @@ const BannerRowTop = ({ title }: Props): JSX.Element => {
       <RowCol>
         <AnimatedLetters title={title} />
       </RowCol>
-      <RowCol>
+      <RowCol
+        initial={{ opacity: 0, y: 80 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ ease: 'easeInOut', duration: 1, delay: 0.4 }}
+      >
         <span className="row-message">
           We are specialised in setting up the foundation of your brand and setting you up for
           success.
